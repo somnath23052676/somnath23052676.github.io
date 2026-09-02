@@ -467,6 +467,21 @@ h2 {
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px var(--accent-dim);
 }
+a.proj-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.proj-github {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-top: -2px;
+}
+.proj-card:hover .proj-github { text-decoration: underline; }
 
 .proj-top {
   display: flex;
@@ -557,15 +572,9 @@ h2 {
 /* ── STATS ── */
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 12px;
   margin-bottom: clamp(32px, 5vw, 48px);
-}
-@media (max-width: 600px) {
-  .stats-row { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-height: 500px) and (orientation: landscape) {
-  .stats-row { grid-template-columns: repeat(4, 1fr); }
 }
 
 .stat-card {
@@ -721,8 +730,8 @@ footer a:hover { color: var(--accent); }
   <a href="#hero" class="nav-logo">SSM<span>.</span></a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="mode-toggle">
@@ -743,7 +752,7 @@ footer a:hover { color: var(--accent); }
           <div class="hero-eyebrow"><span class="eyebrow-dot"></span> Open to SDE / ML Internships</div>
           <h1>Building <span class="accent">intelligent</span><br>software that scales.</h1>
           <p class="hero-tagline">
-            B.Tech CSE · KIIT University · 2027<br>
+            B.Tech CSE · KIIT University<br>
             Focused on ML, NLP &amp; Data Structures. I turn algorithms into working products.
           </p>
           <div class="hero-cta">
@@ -758,7 +767,7 @@ footer a:hover { color: var(--accent); }
           <div class="hero-eyebrow"><span class="eyebrow-dot"></span> Open to Business / Marketing Roles</div>
           <h1>Bridging <span class="accent">tech</span><br>with business impact.</h1>
           <p class="hero-tagline">
-            B.Tech CSE · KIIT University · 2027<br>
+            B.Tech CSE · KIIT University<br>
             Experienced in outreach, presentations &amp; building products from idea to market.
           </p>
           <div class="hero-cta">
@@ -777,13 +786,13 @@ footer a:hover { color: var(--accent); }
         </div>
         <div class="hc-divider"></div>
         <div class="hc-row">
-          <div class="hc-label">CGPA</div>
-          <div class="hc-val">8.23</div>
+          <div class="hc-label">Hackathons Entered</div>
+          <div class="hc-val">3</div>
         </div>
         <div class="hc-divider"></div>
         <div class="hc-row">
-          <div class="hc-label">Graduating</div>
-          <div class="hc-val">2027</div>
+          <div class="hc-label">Presentations Led</div>
+          <div class="hc-val">10+</div>
         </div>
         <div class="hc-divider"></div>
         <div class="hc-row">
@@ -794,6 +803,146 @@ footer a:hover { color: var(--accent); }
     </div>
   </div>
   <div class="hero-scroll"><div class="scroll-dot"></div>scroll</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Projects</div>
+      <h2>Things I've built</h2>
+    </div>
+
+    <div class="projects-grid stagger">
+
+      <!-- TECH projects — always shown -->
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-icon">🤖</div>
+          <span class="proj-badge badge-tech">ML / NLP</span>
+        </div>
+        <div class="proj-title">AI Fashion Design Assistant</div>
+        <div class="proj-desc">Built during internship at Aarivya Labs. An AI-powered assistant that helps with fashion design using Python and ML — deployed via ngrok for live demos.</div>
+        <div class="proj-tags">
+          <span class="tag">Python</span><span class="tag">ML</span><span class="tag">Git</span><span class="tag">API</span>
+        </div>
+      </div>
+
+      <a class="proj-card" href="https://github.com/somnath23052676/movie-recommender" target="_blank" rel="noopener">
+        <div class="proj-top">
+          <div class="proj-icon">🎬</div>
+          <span class="proj-badge badge-tech">NLP</span>
+        </div>
+        <div class="proj-title">Movie Recommender System</div>
+        <div class="proj-desc">Content-based recommendation engine using spaCy NLP to parse movie descriptions and find similar titles via cosine similarity scoring.</div>
+        <div class="proj-tags">
+          <span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">NLP</span><span class="tag">sklearn</span>
+        </div>
+        <div class="proj-github">⌥ View on GitHub ↗</div>
+      </a>
+
+      <a class="proj-card" href="https://github.com/somnath23052676/Fake_News_Classifier" target="_blank" rel="noopener">
+        <div class="proj-top">
+          <div class="proj-icon">📰</div>
+          <span class="proj-badge badge-tech">ML</span>
+        </div>
+        <div class="proj-title">TruthLens — Fake News Classifier</div>
+        <div class="proj-desc">Text classification system for bias detection and fact-checking, using TF-IDF feature extraction with Logistic Regression as the classifier.</div>
+        <div class="proj-tags">
+          <span class="tag">Python</span><span class="tag">TF-IDF</span><span class="tag">LogReg</span><span class="tag">NLP</span>
+        </div>
+        <div class="proj-github">⌥ View on GitHub ↗</div>
+      </a>
+
+      <a class="proj-card" href="https://github.com/somnath23052676/ReWrite" target="_blank" rel="noopener">
+        <div class="proj-top">
+          <div class="proj-icon">✍️</div>
+          <span class="proj-badge badge-tech">AI</span>
+        </div>
+        <div class="proj-title">ReWrite</div>
+        <div class="proj-desc">An AI-powered writing tool that helps rewrite and refine text — built to explore practical applications of language models in everyday writing workflows.</div>
+        <div class="proj-tags">
+          <span class="tag">Python</span><span class="tag">AI</span><span class="tag">NLP</span>
+        </div>
+        <div class="proj-github">⌥ View on GitHub ↗</div>
+      </a>
+
+      <a class="proj-card" href="https://github.com/somnath23052676/recover-ai" target="_blank" rel="noopener">
+        <div class="proj-top">
+          <div class="proj-icon">🛟</div>
+          <span class="proj-badge badge-tech">AI</span>
+        </div>
+        <div class="proj-title">Recover-AI</div>
+        <div class="proj-desc">An AI-assisted recovery tool built to explore how machine learning can help restore or reconstruct lost information.</div>
+        <div class="proj-tags">
+          <span class="tag">Python</span><span class="tag">AI</span><span class="tag">ML</span>
+        </div>
+        <div class="proj-github">⌥ View on GitHub ↗</div>
+      </a>
+
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-icon">🌌</div>
+          <span class="proj-badge badge-tech">AI</span>
+        </div>
+        <div class="proj-title">Exoplanet Detection — ISRO BAH</div>
+        <div class="proj-desc">AI-based system to detect exoplanets from TESS light curve data. Built for the ISRO Bharatiya Antariksh Hackathon 2026.</div>
+        <div class="proj-tags">
+          <span class="tag">Python</span><span class="tag">ML</span><span class="tag">TESS</span><span class="tag">ISRO</span>
+        </div>
+      </div>
+
+      <!-- MARKETING project — shown in both modes -->
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-icon">💧</div>
+          <span class="proj-badge badge-mkt">D2C</span>
+        </div>
+        <div class="proj-title">ElectraHydrate — D2C Product</div>
+        <div class="proj-desc">Designed a complete D2C electrolyte + Vitamin B12 tablet brand for working professionals — market research, pricing, business model, and competitive analysis.</div>
+        <div class="proj-tags">
+          <span class="tag">D2C</span><span class="tag">Market Research</span><span class="tag">Pricing</span><span class="tag">GTM</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Skills</div>
+      <h2 id="skills-heading">Technical toolkit</h2>
+    </div>
+
+    <!-- TECH skills -->
+    <div class="mode-content show skills-wrap stagger" id="skills-tech">
+      <div class="skill-pill"><div class="skill-icon">☕</div><div class="skill-info"><div class="skill-name">Java</div><div class="skill-type">Language</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🐍</div><div class="skill-info"><div class="skill-name">Python</div><div class="skill-type">Language</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🗄️</div><div class="skill-info"><div class="skill-name">SQL</div><div class="skill-type">Language</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🐚</div><div class="skill-info"><div class="skill-name">Bash Scripting</div><div class="skill-type">Language</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🧠</div><div class="skill-info"><div class="skill-name">Machine Learning</div><div class="skill-type">Domain</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">💬</div><div class="skill-info"><div class="skill-name">NLP</div><div class="skill-type">Domain</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🌐</div><div class="skill-info"><div class="skill-name">Azure Cloud</div><div class="skill-type">Platform</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🐧</div><div class="skill-info"><div class="skill-name">Linux</div><div class="skill-type">OS</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🌿</div><div class="skill-info"><div class="skill-name">Git</div><div class="skill-type">Tool</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">📊</div><div class="skill-info"><div class="skill-name">Data Structures & Algo</div><div class="skill-type">Domain</div></div></div>
+    </div>
+
+    <!-- MARKETING skills -->
+    <div class="mode-content skills-wrap stagger" id="skills-mkt">
+      <div class="skill-pill"><div class="skill-icon">🗣️</div><div class="skill-info"><div class="skill-name">Client Communication</div><div class="skill-type">Soft Skill</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🤝</div><div class="skill-info"><div class="skill-name">Negotiation</div><div class="skill-type">Soft Skill</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">👥</div><div class="skill-info"><div class="skill-name">Team Collaboration</div><div class="skill-type">Soft Skill</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">📣</div><div class="skill-info"><div class="skill-name">Outreach & Follow-up</div><div class="skill-type">Soft Skill</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🎤</div><div class="skill-info"><div class="skill-name">Presentations</div><div class="skill-type">10+ led</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🌍</div><div class="skill-info"><div class="skill-name">English · Hindi · Bengali</div><div class="skill-type">Languages</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🚀</div><div class="skill-info"><div class="skill-name">Business Development</div><div class="skill-type">Domain</div></div></div>
+      <div class="skill-pill"><div class="skill-icon">🏪</div><div class="skill-info"><div class="skill-name">D2C / Startup</div><div class="skill-type">Domain</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -870,118 +1019,6 @@ footer a:hover { color: var(--accent); }
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">Skills</div>
-      <h2 id="skills-heading">Technical toolkit</h2>
-    </div>
-
-    <!-- TECH skills -->
-    <div class="mode-content show skills-wrap stagger" id="skills-tech">
-      <div class="skill-pill"><div class="skill-icon">☕</div><div class="skill-info"><div class="skill-name">Java</div><div class="skill-type">Language</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🐍</div><div class="skill-info"><div class="skill-name">Python</div><div class="skill-type">Language</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🗄️</div><div class="skill-info"><div class="skill-name">SQL</div><div class="skill-type">Language</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🐚</div><div class="skill-info"><div class="skill-name">Bash Scripting</div><div class="skill-type">Language</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🧠</div><div class="skill-info"><div class="skill-name">Machine Learning</div><div class="skill-type">Domain</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">💬</div><div class="skill-info"><div class="skill-name">NLP</div><div class="skill-type">Domain</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🌐</div><div class="skill-info"><div class="skill-name">Azure Cloud</div><div class="skill-type">Platform</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🐧</div><div class="skill-info"><div class="skill-name">Linux</div><div class="skill-type">OS</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🌿</div><div class="skill-info"><div class="skill-name">Git</div><div class="skill-type">Tool</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">📊</div><div class="skill-info"><div class="skill-name">Data Structures & Algo</div><div class="skill-type">Domain</div></div></div>
-    </div>
-
-    <!-- MARKETING skills -->
-    <div class="mode-content skills-wrap stagger" id="skills-mkt">
-      <div class="skill-pill"><div class="skill-icon">🗣️</div><div class="skill-info"><div class="skill-name">Client Communication</div><div class="skill-type">Soft Skill</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🤝</div><div class="skill-info"><div class="skill-name">Negotiation</div><div class="skill-type">Soft Skill</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">👥</div><div class="skill-info"><div class="skill-name">Team Collaboration</div><div class="skill-type">Soft Skill</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">📣</div><div class="skill-info"><div class="skill-name">Outreach & Follow-up</div><div class="skill-type">Soft Skill</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🎤</div><div class="skill-info"><div class="skill-name">Presentations</div><div class="skill-type">10+ led</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🌍</div><div class="skill-info"><div class="skill-name">English · Hindi · Bengali</div><div class="skill-type">Languages</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🚀</div><div class="skill-info"><div class="skill-name">Business Development</div><div class="skill-type">Domain</div></div></div>
-      <div class="skill-pill"><div class="skill-icon">🏪</div><div class="skill-info"><div class="skill-name">D2C / Startup</div><div class="skill-type">Domain</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-label">Projects</div>
-      <h2>Things I've built</h2>
-    </div>
-
-    <div class="projects-grid stagger">
-
-      <!-- TECH projects — always shown -->
-      <div class="proj-card">
-        <div class="proj-top">
-          <div class="proj-icon">🤖</div>
-          <span class="proj-badge badge-tech">ML / NLP</span>
-        </div>
-        <div class="proj-title">AI Fashion Design Assistant</div>
-        <div class="proj-desc">Built during internship at Aarivya Labs. An AI-powered assistant that helps with fashion design using Python and ML — deployed via ngrok for live demos.</div>
-        <div class="proj-tags">
-          <span class="tag">Python</span><span class="tag">ML</span><span class="tag">Git</span><span class="tag">API</span>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-top">
-          <div class="proj-icon">🎬</div>
-          <span class="proj-badge badge-tech">NLP</span>
-        </div>
-        <div class="proj-title">Movie Recommender System</div>
-        <div class="proj-desc">Content-based recommendation engine using spaCy NLP to parse movie descriptions and find similar titles via cosine similarity scoring.</div>
-        <div class="proj-tags">
-          <span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">NLP</span><span class="tag">sklearn</span>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-top">
-          <div class="proj-icon">📰</div>
-          <span class="proj-badge badge-tech">ML</span>
-        </div>
-        <div class="proj-title">Fake News Classifier</div>
-        <div class="proj-desc">Text classification system for bias detection and fact-checking, using TF-IDF feature extraction with Logistic Regression as the classifier.</div>
-        <div class="proj-tags">
-          <span class="tag">Python</span><span class="tag">TF-IDF</span><span class="tag">LogReg</span><span class="tag">NLP</span>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-top">
-          <div class="proj-icon">🌌</div>
-          <span class="proj-badge badge-tech">AI</span>
-        </div>
-        <div class="proj-title">Exoplanet Detection — ISRO BAH</div>
-        <div class="proj-desc">AI-based system to detect exoplanets from TESS light curve data. Built for the ISRO Bharatiya Antariksh Hackathon 2026.</div>
-        <div class="proj-tags">
-          <span class="tag">Python</span><span class="tag">ML</span><span class="tag">TESS</span><span class="tag">ISRO</span>
-        </div>
-      </div>
-
-      <!-- MARKETING project — shown in both modes -->
-      <div class="proj-card">
-        <div class="proj-top">
-          <div class="proj-icon">💧</div>
-          <span class="proj-badge badge-mkt">D2C</span>
-        </div>
-        <div class="proj-title">ElectraHydrate — D2C Product</div>
-        <div class="proj-desc">Designed a complete D2C electrolyte + Vitamin B12 tablet brand for working professionals — market research, pricing, business model, and competitive analysis.</div>
-        <div class="proj-tags">
-          <span class="tag">D2C</span><span class="tag">Market Research</span><span class="tag">Pricing</span><span class="tag">GTM</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ACHIEVEMENTS + STATS -->
 <section id="achievements">
   <div class="container">
@@ -999,6 +1036,10 @@ footer a:hover { color: var(--accent); }
       <div class="stat-card">
         <div class="stat-n">8.23</div>
         <div class="stat-l">CGPA at KIIT</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-n">2027</div>
+        <div class="stat-l">Graduating Year</div>
       </div>
       <div class="stat-card">
         <div class="stat-n">10+</div>
